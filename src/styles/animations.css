@@ -1,0 +1,16 @@
+/* Add to existing animations.css */
+@keyframes scrollPrimary {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-280px * 5)); }
+}
+
+@keyframes scrollReverse {
+  0% { transform: translateX(calc(-280px * 5)); }
+  100% { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+  }
+}

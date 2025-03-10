@@ -1,0 +1,78 @@
+/* Background grid effect */
+.bg-grid {
+  background-size: 24px 24px;
+  background-image: linear-gradient(to right, rgba(0, 86, 179, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 86, 179, 0.1) 1px, transparent 1px);
+}
+
+/* 3D transformation styles */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Glow and shadow effects */
+.neon-glow {
+  box-shadow: 
+    0 0 10px rgba(0, 86, 179, 0.2),
+    0 0 20px rgba(0, 86, 179, 0.1),
+    0 0 30px rgba(0, 86, 179, 0.05);
+}
+
+.premium-card {
+  background: linear-gradient(135deg, rgba(18, 24, 38, 0.8) 0%, rgba(8, 11, 18, 0.95) 100%);
+  border: 1px solid rgba(44, 206, 217, 0.08);
+  box-shadow: 
+    0 4px 24px -8px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(44, 206, 217, 0.05),
+    inset 0 0 32px rgba(44, 206, 217, 0.03);
+}
+
+/* Animation for data flow lines and scan effects */
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -8;
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    top: -2px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Data value text effects */
+.text-glow {
+  text-shadow: 0 0 15px rgba(44, 206, 217, 0.4);
+}
+
+.text-glow-primary {
+  text-shadow: 0 0 15px rgba(0, 86, 179, 0.4);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(44, 206, 217, 0.3);
+  color: transparent;
+}

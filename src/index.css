@@ -1,0 +1,141 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 222 25% 12%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 25% 14%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 25% 12%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Main brand blue */
+    --primary: 211 100% 35%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Electric blue for highlights */
+    --secondary: 196 100% 50%;
+    --secondary-foreground: 222 25% 12%;
+    
+    /* Lighter blue for accents */
+    --accent: 199 98% 48%;
+    --accent-foreground: 210 40% 98%;
+    
+    --muted: 222 25% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 84% 45%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 37 100% 50%;
+    --warning-foreground: 210 40% 98%;
+    
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 211 100% 35%;
+    
+    --radius: 0.5rem;
+    --angle: 0deg;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(0, 86, 179, 0.15), transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.15), transparent 50%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.2);
+    border-radius: 100vh;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.3);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.2) transparent;
+  }
+}
+
+@layer components {
+  .neon-panel {
+    @apply relative bg-card/80 backdrop-blur-xl border border-primary/20 rounded-lg
+           shadow-[0_0_30px_-10px_rgba(0,86,179,0.2)];
+  }
+  
+  .neon-glow {
+    @apply relative;
+    box-shadow: 
+      0 0 10px theme(colors.primary.DEFAULT / 20%),
+      0 0 20px theme(colors.primary.DEFAULT / 10%),
+      0 0 30px theme(colors.primary.DEFAULT / 5%);
+  }
+  
+  .cyber-grid {
+    @apply relative;
+    background-image: 
+      linear-gradient(to right, theme(colors.primary.DEFAULT / 3%) 1px, transparent 1px),
+      linear-gradient(to bottom, theme(colors.primary.DEFAULT / 3%) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0056b3] via-[#00d4ff] to-[#0098ff];
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    @apply neon-glow;
+    transform: translateY(-1px);
+  }
+
+  .container {
+    @apply max-w-[1400px] mx-auto;
+  }
+
+  .animated-border {
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: theme('borderRadius.2xl');
+    background: 
+      linear-gradient(rgb(21, 28, 40), rgb(21, 28, 40)) padding-box,
+      linear-gradient(var(--angle), #0056b3, #00d4ff) border-box;
+    animation: 8s rotate linear infinite;
+  }
+
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+}
