@@ -32,16 +32,18 @@ export function HeroSection() {
           playsInline
           onLoadedData={() => setIsVideoLoaded(true)}
           className="object-cover w-full h-full"
-          src="/fleet-video.mp4"
+          src="https://beige-select-ox-761.mypinata.cloud/ipfs/bafybeihhrpl5b5upp6hyawh42t2nsgubajv5by3lbzivg3fzhm5pnlmmti"
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-lg py-4' : 'py-6'
-      }`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? 'bg-background/80 backdrop-blur-lg py-4' : 'py-6'
+        }`}
+      >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
             <motion.div
@@ -51,7 +53,7 @@ export function HeroSection() {
               className="flex items-center space-x-8"
             >
               <Brand variant="full" size="md" />
-              
+
               <div className="hidden md:flex items-center space-x-6">
                 {['Features', 'About', 'Testimonials'].map((item) => (
                   <a
@@ -65,17 +67,17 @@ export function HeroSection() {
                 ))}
               </div>
             </motion.div>
-            
+
             <div className="hidden md:flex items-center gap-4">
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 onClick={() => navigate('/login')}
                 className="text-sm font-medium"
                 align="center"
               >
                 Sign In
               </Button>
-              <Button 
+              <Button
                 variant="primary"
                 onClick={() => navigate('/register')}
                 align="center"
@@ -111,8 +113,8 @@ export function HeroSection() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   onClick={() => {
                     navigate('/login');
                     setIsMobileMenuOpen(false);
@@ -122,7 +124,7 @@ export function HeroSection() {
                 >
                   Sign In
                 </Button>
-                <Button 
+                <Button
                   variant="primary"
                   onClick={() => {
                     navigate('/register');
@@ -143,7 +145,10 @@ export function HeroSection() {
       <div className="relative container mx-auto px-6 h-full flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isVideoLoaded ? 1 : 0, y: isVideoLoaded ? 0 : 20 }}
+          animate={{
+            opacity: isVideoLoaded ? 1 : 0,
+            y: isVideoLoaded ? 0 : 20,
+          }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center space-y-8"
         >
@@ -155,7 +160,8 @@ export function HeroSection() {
                 <span className="block gradient-text">Made Simple</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 lg:px-12 max-w-3xl mx-auto">
-                Streamline your fleet financing with our intelligent platform. Get better rates, faster approvals, and complete transparency.
+                Streamline your fleet financing with our intelligent platform.
+                Get better rates, faster approvals, and complete transparency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -170,7 +176,11 @@ export function HeroSection() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() =>
+                    document
+                      .getElementById('features')
+                      ?.scrollIntoView({ behavior: 'smooth' })
+                  }
                   className="min-w-[200px] group"
                   align="center"
                 >
@@ -186,11 +196,11 @@ export function HeroSection() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ 
+        transition={{
           duration: 0.8,
           delay: 1,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: 'reverse',
         }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60"
       >
